@@ -62,6 +62,8 @@ requirejs([
       scope = 'client';
     } else if ( catlinks.indexOf('Shared') > 0 ) {
       scope = 'shared';
+    } else if ( catlinks.indexOf('Menu') > 0 ) {
+      scope = 'menu';
     }
 
     scrapeData.push({
