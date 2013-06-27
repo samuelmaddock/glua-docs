@@ -10,17 +10,22 @@ requirejs([
 
   var domain = 'wiki.garrysmod.com';
   var scrapeData = [];
-  var spidey = spider();
+  var spidey = spider({
+    userAgent: "samuel.maddock@gmail.com"
+  });
 
   // file where we'll dump the json
-  var filename = path.dirname(__filename) + '/../static/data/glua.json';
+  var filename = path.dirname(__filename) + '/../app/data/glua.json';
   console.log('[Dumping to ' + filename + '.]');
   var file = fs.openSync(filename, 'w');
 
   var rootUrls = [
     'http://wiki.garrysmod.com/page/Category:Hooks',
-    // 'http://wiki.garrysmod.com/page/Category:Functions',
+    'http://wiki.garrysmod.com/page/Category:Functions',
+    //'http://wiki.garrysmod.com/page/Enums'
   ];
+
+  var scrapeCount = 0;
 
   spidey.route(domain, '/page/Category:Hooks', function ($, url) {
     console.log('---------');
@@ -29,6 +34,9 @@ requirejs([
     var links = $('table ul li a');
 
     _.each(links, function(elt) {
+      // only scrape a few pages for testing
+      // if ( scrapeCount > 10 ) return;
+      // scrapeCount++;
       spidey.get('http://' + domain + $(elt).attr('href'));
     });
   });

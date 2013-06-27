@@ -1,0 +1,241 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+html, body { width: 100%; height: 100%; }
+
+body {
+	background-color: #333;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11pt;
+}
+
+*::selection {
+	color: white;
+	background-color: rgba(0,0,0,0.22);
+	text-shadow: 0px 0px 6px white;
+}
+
+input {
+	font: inherit;
+}
+
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	width: 100%;
+	height: 40px;
+	background-color: rgb(127, 140, 141);
+}
+
+.site {
+	position: absolute;
+	top: 40px; bottom: 0;
+	left: 0; right: 0;
+}
+
+
+/* Search */
+
+.search-container {
+	background-color: rgba(236, 240, 241,1.0);
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0;
+	width: 280px;
+}
+
+.search-header {
+	height: 30px;
+	padding: 10px;
+}
+
+.search-header input[type=search] {
+	width: 250px;
+	padding: 4px;
+	border-radius: 4px;
+	outline: none;
+	/*border: 1px solid rgba(0,0,0,0.15);*/
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.15) inset;
+	font-size: 10pt;
+}
+
+#results {
+	display: block;
+	position: absolute;
+	top: 50px; bottom: 0;
+	left: 0; right: 0;
+	font-size: 10pt;
+	overflow-x: hidden;
+}
+
+#results li {
+	color: #666;
+}
+
+#results li:hover {
+	background-color: rgba(0,0,0,0.06);
+}
+
+#results li.server:hover {
+	background-color: rgba(52, 152, 219,0.11);
+}
+
+#results li.shared:hover {
+	background-color: rgba(230, 126, 34,0.11);
+}
+
+#results li.client:hover {
+	background-color: rgba(241, 196, 15,0.11);
+}
+
+#results li.menu:hover {
+	background-color: rgba(46, 204, 113,0.11);
+}
+
+#results li a, #results li a:hover, #results li a:active {
+	display: block;
+	padding: 4px 14px 4px 14px;
+	color: inherit;
+	text-decoration: none;
+}
+
+
+/* Documents */
+
+.doc-container {
+	background-color: rgba(189, 195, 199,1.0);
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 280px; right: 0;
+}
+
+.doc {
+	padding: 15px;
+	color: #444;
+}
+
+.doc h1 {
+	font-size: 22pt;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.doc p {
+	padding: 5px;
+	padding-left: 15px;
+}
+
+.doc .scope-box {
+	height: 11px;
+	background-color: rgba(0,0,0,0.05);
+	border: 1px solid rgba(0,0,0,0.11);
+	border-radius: 2px;
+	padding: 5px;
+	font-size: 8pt;
+	margin-top: -4px;
+	display: inline-block;
+	color: rgba(0,0,0,0.44) !important;
+}
+
+.doc .scope-box.shared {
+	height: 11px;
+	background-color: rgba(230, 126, 34,0.33);
+	border: 1px solid rgba(230, 126, 34,0.66);
+	border-radius: 2px;
+	padding: 5px;
+	font-size: 8pt;
+	margin-top: -4px;
+	display: inline-block;
+}
+
+/* Scrollbar */
+
+.scroll {
+	overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+	width: 10px;
+	background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	overflow: visible;
+	background-color: rgba(0,0,0,0.11);
+}
+
+.scroll::-webkit-scrollbar-button {
+	height: 0;
+	display: block;
+	background-color: transparent;
+}
+
+
+/* Lua states */
+
+.server {
+	color: rgba(52, 152, 219,1.0) !important;
+}
+
+.shared {
+	color: rgba(230, 126, 34,1.0) !important;
+}
+
+.client {
+	color: rgba(241, 196, 15,1.0) !important;
+}
+
+.menu {
+	color: rgba(46, 204, 113,1.0) !important;
+}
+
+/* Wiki CSS */
+
+.wiki .toc {
+	display: none;
+}
+
+.wiki h1 {
+	font-size: 16pt;
+}
+
+.wiki span[id=Example] {
+	font-size: 14pt;
+}
+
+.wiki span[id*=Arguments_] {
+	display: none;
+}
+
+.wiki h1 + p, .wiki .argument, .wiki .return {
+	margin-bottom: 15px;
+}
+
+.wiki pre, .wiki .function_line, .wiki code {
+	display: block;
+	color: white;
+	background-color: rgba(0,0,0,0.66);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 4px;
+	font-size: 10pt;
+	white-space: pre;
+	overflow: auto;
+	max-width: 750px;
+}
+
+.wiki a, .wiki a:visited, .wiki a:hover, .wiki a:active {
+	color: #3498db;
+	text-decoration: none;
+}
+
+.wiki a:hover {
+	text-decoration: underline;
+}

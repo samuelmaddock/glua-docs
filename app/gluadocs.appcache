@@ -1,0 +1,9 @@
+CACHE MANIFEST
+
+# Version 0.08
+
+NETWORK:
+*
+
+CACHE:
+data/glua.json
