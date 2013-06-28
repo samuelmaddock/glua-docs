@@ -52,24 +52,28 @@ header {
 }
 
 .search-header {
-	height: 30px;
-	padding: 10px;
+	height: 40px;
+	font-size: 0;
 }
 
 .search-header input[type=search] {
-	width: 250px;
-	padding: 4px;
-	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: none;
 	outline: none;
-	/*border: 1px solid rgba(0,0,0,0.15);*/
-	box-shadow: 0 0 3px 0 rgba(0,0,0,0.15) inset;
 	font-size: 10pt;
+	line-height: 12pt;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
 #results {
 	display: block;
 	position: absolute;
-	top: 50px; bottom: 0;
+	top: 40px; bottom: 0;
 	left: 0; right: 0;
 	font-size: 10pt;
 	overflow-x: hidden;
@@ -101,7 +105,7 @@ header {
 
 #results li a, #results li a:hover, #results li a:active {
 	display: block;
-	padding: 4px 14px 4px 14px;
+	padding: 4px 11px 4px 11px;
 	color: inherit;
 	text-decoration: none;
 }
@@ -238,4 +242,28 @@ header {
 
 .wiki a:hover {
 	text-decoration: underline;
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+	.search-container {
+		width: 40%;
+	}
+	.doc-container {
+		left: 40%;
+	}
+}
+
+@media (max-width: 500px) {
+	.search-container {
+		width: auto;
+		top: 0; bottom: auto;
+		left: 0; right: 0;
+		height: 200px;
+	}
+	.doc-container {
+		width: 100%;
+		height: auto;
+		top: 200px; bottom: auto;
+		left: 0; right: 0;
+	}
 }
