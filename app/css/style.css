@@ -131,11 +131,6 @@ header {
 	margin-bottom: 15px;
 }
 
-.doc p {
-	padding: 5px;
-	padding-left: 15px;
-}
-
 .doc .scope-box {
 	height: 11px;
 	background-color: rgba(0,0,0,0.05);
@@ -208,6 +203,12 @@ header {
 
 .wiki h1 {
 	font-size: 16pt;
+}
+
+.wiki p {
+	padding: 5px;
+	padding-left: 15px;
+	line-height: 16pt;
 }
 
 .wiki span[id=Example] {
