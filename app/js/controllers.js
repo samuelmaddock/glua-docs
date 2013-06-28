@@ -38,11 +38,8 @@ angular.module('docsApp.controllers', []).
 			queryTimeoutId = window.setTimeout(function(){
 				$scope.$apply(function() {
 					$scope.query = $scope.queryModel;
-					// window.setTimeout(function(){
-					// 	Rainbow.color();
-					// }, 500);
 				});
-			}, 260);
+			}, 220);
 
 			window.location.hash = $scope.queryModel;
 		}
