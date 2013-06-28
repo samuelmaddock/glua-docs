@@ -26,7 +26,7 @@
 					<div class="wrapper">
 
 						<div class="search-header">
-							<input type="search" placeholder="Type a hook or function name" ng-model="queryModel" ng-change="updateQuery()" autofocus />
+							<input type="search" placeholder="Type a hook or function name" ng-model="queryModel" ng-change="updateQuery()" spellcheck="false" autofocus />
 						</div>
 
 						<ul id="results" class="scroll">
@@ -47,7 +47,7 @@
 
 					<div class="wrapper scroll" ng-show="query != ''">
 
-						<div class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:20" doc-rainbow>
+						<div class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow>
 							<h1 class="{{fn.scope}}">{{fn.title}}</h1>
 							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
 						</div>
