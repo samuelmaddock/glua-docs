@@ -131,29 +131,6 @@ header {
 	margin-bottom: 15px;
 }
 
-.doc .scope-box {
-	height: 11px;
-	background-color: rgba(0,0,0,0.05);
-	border: 1px solid rgba(0,0,0,0.11);
-	border-radius: 2px;
-	padding: 5px;
-	font-size: 8pt;
-	margin-top: -4px;
-	display: inline-block;
-	color: rgba(0,0,0,0.44) !important;
-}
-
-.doc .scope-box.shared {
-	height: 11px;
-	background-color: rgba(230, 126, 34,0.33);
-	border: 1px solid rgba(230, 126, 34,0.66);
-	border-radius: 2px;
-	padding: 5px;
-	font-size: 8pt;
-	margin-top: -4px;
-	display: inline-block;
-}
-
 /* Scrollbar */
 
 .scroll {
