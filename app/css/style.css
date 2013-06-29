@@ -46,24 +46,28 @@ header .title {
 	font-size: 28pt;
 }
 
-header > ul {
+header nav {
 	float: right;
 	width: auto;
+	height: 100%;
+}
+
+nav > ul {
 	height: 100%;
 	text-align: center;
 	font-size: 0;
 }
 
-header > ul li {
+nav > ul li {
 	display: inline-block;
 	height: 100%;
 }
 
-header > ul li:hover {
+nav > ul li:hover {
 	background-color: rgba(255,255,255,0.11);
 }
 
-header > ul li a {
+nav > ul li a {
 	display: block;
 	height: 100%;
 	font-size: 11pt;
@@ -72,12 +76,12 @@ header > ul li a {
 	padding-right: 10px;
 }
 
-header > ul li a, header > ul li a:visited {
+nav > ul li a, nav > ul li a:visited {
 	color: rgba(255,255,255,0.44);
 	text-decoration: none;
 }
 
-header > ul li a:hover {
+nav > ul li a:hover {
 	color: rgba(255,255,255,0.88);
 }
 
