@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('docsApp.controllers', []).
 	controller('DocsCtrl', ['$scope', '$http', function($scope, $http){
 
