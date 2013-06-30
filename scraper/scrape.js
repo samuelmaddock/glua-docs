@@ -20,7 +20,8 @@ requirejs([
 		// 'http://wiki.garrysmod.com/page/Category:Hooks',
 		// 'http://wiki.garrysmod.com/page/Category:Functions',
 		//'http://wiki.garrysmod.com/page/Enums'
-		"http://wiki.garrysmod.com/page/ai_schedule/New"
+		// "http://wiki.garrysmod.com/page/ai_schedule/New"
+		"http://wiki.garrysmod.com/page/Entity/Disposition"
 	];
 
 	var scrapeData = [];
@@ -65,6 +66,23 @@ requirejs([
 			elem.attribs.href = "http://" + domain + elem.attribs.href;
 			elem.attribs.target = "_blank";
 		});
+
+		// Wiki code processing
+		$("#bodyContent pre").each(function(i, e) {
+			var html = $(e).html();
+			html = html.replace(/if /g, 'if (');
+			html = html.replace(/if \(\(/g, 'if (');
+			html = html.replace(/ then/g, ') then');
+			html = html.replace(/\)\) then/g, ') then');
+			html = html.replace(/}\n/g, '}\n\n');
+			html = html.replace(/\)/g, ' )');
+			html = html.replace(/  \)/g, ' )');
+			html = html.replace(/\(/g, '( ');
+			html = html.replace(/\(  /g, '( ');
+			html = html.replace(/\( \)/g, '()');
+			html = html.replace(/\= \{\n/g, '=\n{\n');
+			$(e).html(html);
+		}).attr("data-language", "lua");
 
 		scrapeData.push({
 			url   : url,

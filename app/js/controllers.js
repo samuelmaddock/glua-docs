@@ -20,11 +20,6 @@ angular.module('docsApp.controllers', []).
 			url: "./data/glua.json",
 			method: "GET"
 		}).success(function(data, status, headers, config) {
-			for(var i = 0; i < data.length; i++) {
-				data[i].html = data[i].html
-					.replace("<pre>", "<pre data-language='lua'>");
-					// .replace("<div class=\"function_line\">", "<pre class='function_line' data-language='lua'>");
-			}
 			$scope.functions = data;
 		})
 
