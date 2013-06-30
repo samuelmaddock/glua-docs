@@ -45,7 +45,15 @@ module.exports = function(grunt) {
 			generate: {
 				options: {
 					basePath: 'app/',
-					cache: ['data/glua.json'],
+					cache: [
+						'index.html',
+						'css/style.css',
+						'data/glua.json',
+						'js/gluadocs.min.js',
+						'js/lib/angular.min.js',
+						'js/lib/rainbow-custom.min.js',
+						'fonts/Roboto-Regular-webfont.svg'
+					],
 					verbose: false,
 					timestamp: true
 				},
