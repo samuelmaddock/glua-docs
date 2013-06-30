@@ -17,11 +17,9 @@ requirejs([
 	var domain = 'wiki.garrysmod.com';
 	var luaStates = ['server','shared','client','menu'];
 	var rootUrls = [
-		// 'http://wiki.garrysmod.com/page/Category:Hooks',
-		// 'http://wiki.garrysmod.com/page/Category:Functions',
+		'http://wiki.garrysmod.com/page/Category:Hooks',
+		'http://wiki.garrysmod.com/page/Category:Functions',
 		//'http://wiki.garrysmod.com/page/Enums'
-		// "http://wiki.garrysmod.com/page/ai_schedule/New"
-		"http://wiki.garrysmod.com/page/Entity/Disposition"
 	];
 
 	var scrapeData = [];
