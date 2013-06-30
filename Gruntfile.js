@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		clean: ['src/js/gluadocs.js']
+		clean: ['src/js/concat.js']
 
 	});
 
