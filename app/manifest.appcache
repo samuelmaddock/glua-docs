@@ -1,9 +1,8 @@
 CACHE MANIFEST
-# Time: Sun Jun 30 2013 01:09:44 GMT-0400 (Eastern Daylight Time)
+# Time: Sun Jun 30 2013 01:19:55 GMT-0400 (Eastern Daylight Time)
 
 CACHE:
 data/glua.json
 
 NETWORK:
-http://*
-https://*
+*

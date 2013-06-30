@@ -17,6 +17,14 @@ module.exports = function(grunt) {
 			app: {
 				files: {
 					'app/js/gluadocs.min.js' : ['src/js/concat.js']
+				},
+			}
+		},
+
+		cssmin: {
+			app: {
+				files: {
+					'app/css/style.css' : ['src/css/style.css','src/css/lua-obsidian.css']
 				}
 			}
 		},
@@ -38,7 +46,6 @@ module.exports = function(grunt) {
 				options: {
 					basePath: 'app/',
 					cache: ['data/glua.json'],
-					network: ['http://*','https://*'],
 					verbose: false,
 					timestamp: true
 				},
@@ -55,10 +62,11 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-manifest');
 
-	grunt.registerTask('default', ['concat','uglify','htmlmin','manifest','clean']);
+	grunt.registerTask('default', ['concat','uglify','cssmin','htmlmin','manifest','clean']);
 
 };
