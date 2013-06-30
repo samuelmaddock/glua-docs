@@ -63,7 +63,7 @@
 					<div class="wrapper scroll" ng-show="query != ''">
 
 						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow>
-							<h1 class="{{fn.scope}}">{{fn.title}}</h1>
+							<h1 class="{{fn.scope}}"><a href="{{fn.url}}" target="_blank">{{fn.title}}</a></h1>
 							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
 						</article>
 
