@@ -84,6 +84,13 @@ requirejs([
 			$(e).html(html);
 		}).attr("data-language", "lua");
 
+		// Insert args into function usage
+		var args = [];
+		var chunks = $(".arg_chunk").each(function(i,elem){
+			args.push($(elem).html());
+		});
+		$('.function_args').html( args.join(', ') );
+
 		scrapeData.push({
 			url   : url,
 			title : title,
