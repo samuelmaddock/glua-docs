@@ -33,6 +33,22 @@ module.exports = function(grunt) {
 			}
 		},
 
+		manifest: {
+			generate: {
+				options: {
+					basePath: 'app/',
+					cache: ['data/glua.json'],
+					network: ['http://*','https://*'],
+					verbose: false,
+					timestamp: true
+				},
+				src: [
+					'src/index.html'
+				],
+				dest: 'app/manifest.appcache'
+			}
+		},
+
 		clean: ['src/js/gluadocs.js']
 
 	});
@@ -43,6 +59,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-manifest');
 
-	grunt.registerTask('default', ['concat','uglify','htmlmin','clean']);
+	grunt.registerTask('default', ['concat','uglify','htmlmin','manifest','clean']);
 
 };
