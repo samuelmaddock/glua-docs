@@ -17,14 +17,15 @@ requirejs([
 	var domain = 'wiki.garrysmod.com';
 	var luaStates = ['server','shared','client','menu'];
 	var rootUrls = [
-		'http://wiki.garrysmod.com/page/Category:Hooks',
-		'http://wiki.garrysmod.com/page/Category:Functions',
+		// 'http://wiki.garrysmod.com/page/Category:Hooks',
+		// 'http://wiki.garrysmod.com/page/Category:Functions',
 		//'http://wiki.garrysmod.com/page/Enums'
+		"http://wiki.garrysmod.com/page/ai_schedule/New"
 	];
 
 	var scrapeData = [];
 	var spidey = spider({
-		userAgent: "GluaDocs Bot"
+		userAgent: "GLuaDocs Bot"
 	});
 
 	// file where we'll dump the json
@@ -33,7 +34,6 @@ requirejs([
 	var file = fs.openSync(filename, 'w');
 
 	spidey.route(domain, '/page/Category:Hooks', function ($, url) {
-		console.log('---------');
 		console.log('scraping:', url);
 
 		var links = $('table ul li a');
@@ -44,7 +44,7 @@ requirejs([
 	});
 
 	spidey.route(domain, '/page/*/*', function ($, url) {
-		console.log('glua scraping:', url);
+		console.log('wiki scraping:', url);
 
 		var catlinks = $('#mw-normal-catlinks').html().toLowerCase();
 
@@ -59,6 +59,12 @@ requirejs([
 
 		var title = $('head').html().match(/"wgPageName": "(\S+)"/)[1]
 			.replace('/','.');
+
+		// Set links to absolute urls
+		$("#bodyContent .mw-content-ltr a[href^='/page/']").each(function(i,elem){
+			elem.attribs.href = "http://" + domain + elem.attribs.href;
+			console.log(elem.attribs.href);
+		});
 
 		scrapeData.push({
 			url   : url,
