@@ -63,7 +63,7 @@ requirejs([
 		// Set links to absolute urls
 		$("#bodyContent .mw-content-ltr a[href^='/page/']").each(function(i,elem){
 			elem.attribs.href = "http://" + domain + elem.attribs.href;
-			console.log(elem.attribs.href);
+			elem.attribs.target = "_blank";
 		});
 
 		scrapeData.push({
