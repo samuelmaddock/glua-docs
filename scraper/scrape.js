@@ -103,7 +103,7 @@ requirejs([
 	});
 
 	process.on('exit', function () {
-		fs.writeSync(file, JSON.stringify(scrapeData, null, '\t'));
+		fs.writeSync(file, JSON.stringify(scrapeData));
 		console.log('DONE');
 	});
 
