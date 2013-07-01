@@ -281,9 +281,9 @@ nav > ul li a:hover {
 	margin: 10px;
 	border-radius: 4px;
 	font-size: 10pt;
-	white-space: pre;
+	/*white-space: pre;*/
 	overflow: auto;
-	max-width: 750px;
+	max-width: 900px;
 }
 
 .wiki a, .wiki a:visited, .wiki a:hover, .wiki a:active {
