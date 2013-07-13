@@ -1,13 +1,20 @@
 /* fonts */
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Regular-webfont.eot');
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto-Regular-webfont.eot');
 	src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('eot'),
-         url('../fonts/Roboto-Regular-webfont.svg') format('svg'),
-         url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
-         url('../fonts/Roboto-Regular-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+		 url('../fonts/Roboto-Regular-webfont.svg') format('svg'),
+		 url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
+		 url('../fonts/Roboto-Regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'Roboto';
+		src: url('../fonts/Roboto-Regular-webfont.svg') format('svg');
+	}
 }
 
 /* css reset */
@@ -295,7 +302,7 @@ nav > ul li a:hover {
 	text-decoration: underline;
 }
 
-@media (min-width: 500px) and (max-width: 700px) {
+@media (min-width: 500px) and (max-width: 700px), (min-device-width: 500px) and (max-device-width: 700px) {
 	.search-container {
 		width: 40%;
 	}
@@ -304,7 +311,7 @@ nav > ul li a:hover {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-device-width: 500px) {
 	.search-container {
 		width: auto;
 		top: 0; bottom: auto;
