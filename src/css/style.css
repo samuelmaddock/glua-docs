@@ -168,11 +168,11 @@ nav > ul li a:hover {
 }
 
 #results li.shared:hover {
-	background-color: rgba(230, 126, 34,0.11);
+	background-color: rgba(191, 34, 230,0.11);
 }
 
 #results li.client:hover {
-	background-color: rgba(241, 196, 15,0.11);
+	background-color: rgba(230, 126, 34,0.11);
 }
 
 #results li.menu:hover {
@@ -241,11 +241,11 @@ nav > ul li a:hover {
 }
 
 .shared {
-	color: rgba(230, 126, 34,1.0) !important;
+	color: rgba(191, 34, 230,1.0) !important;
 }
 
 .client {
-	color: rgba(241, 196, 15,1.0) !important;
+	color: rgba(230, 126, 34,1.0) !important;
 }
 
 .menu {

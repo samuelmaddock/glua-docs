@@ -60,10 +60,12 @@ requirejs([
 			.replace('/','.');
 
 		// Set links to absolute urls
-		$("#bodyContent .mw-content-ltr a[href^='/page/']").each(function(i,elem){
+		function setAbsoluteUrl(idx, elem) {
 			elem.attribs.href = "http://" + domain + elem.attribs.href;
 			elem.attribs.target = "_blank";
-		});
+		}
+		$("#bodyContent .mw-content-ltr a[href^='/page/']").each(setAbsoluteUrl);
+		$("#bodyContent .mw-content-ltr a[href^='/index.php']").each(setAbsoluteUrl);
 
 		// Wiki code processing
 		$("#bodyContent pre").each(function(i, e) {
