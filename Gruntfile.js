@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		},
 
 		uglify: {
-			app: {
+			prod: {
 				files: {
 					'app/js/gluadocs.min.js' : ['src/js/concat.js']
 				},
@@ -22,15 +22,15 @@ module.exports = function(grunt) {
 		},
 
 		cssmin: {
-			app: {
+			prod: {
 				files: {
-					'app/css/style.css' : ['src/css/style.css','src/css/lua-obsidian.css']
+					'app/css/style.min.css' : ['src/css/style.css','src/css/lua-obsidian.css']
 				}
 			}
 		},
 
 		htmlmin: {
-			app: {
+			prod: {
 				options: {
 					removeComments: true,
 					collapseWhitespace: true
@@ -134,9 +134,9 @@ module.exports = function(grunt) {
 		'devcode:prod',
 		'copy:prod',
 		'concat',
-		'uglify',
-		'cssmin',
-		'htmlmin',
+		'uglify:prod',
+		'cssmin:prod',
+		'htmlmin:prod',
 		'manifest',
 		'clean'
 	]);
