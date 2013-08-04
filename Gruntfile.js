@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: {
-					'app/index.html' : 'src/index.html'
+					'app/index.html' : 'app/index.html'
 				}
 			}
 		},
@@ -58,9 +58,57 @@ module.exports = function(grunt) {
 					timestamp: true
 				},
 				src: [
-					'src/index.html'
+					'app/index.html'
 				],
 				dest: 'app/manifest.appcache'
+			}
+		},
+
+		devcode: {
+			options: {
+				html: true,
+				clean: true,
+				block: {
+					open: 'devcode',
+					close: 'endcode'
+				}
+			},
+			prod: {
+				options: {
+					source: 'src/',
+					dest: 'app/',
+					env: 'prod'
+				}
+			},
+			dev: {
+				options: {
+					source: 'src/',
+					dest: 'dev/',
+					env: 'dev'
+				}
+			}
+		},
+
+		copy: {
+			prod: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/',
+						src: ['js/lib/*','data/*','fonts/*','favicon.png'],
+						dest: 'app/'
+					}
+				]
+			},
+			dev: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/',
+						src: ['*/**'],
+						dest: 'dev/'
+					}
+				]
 			}
 		},
 
@@ -70,11 +118,27 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-devcode');
 	grunt.loadNpmTasks('grunt-manifest');
 
-	grunt.registerTask('default', ['concat','uglify','cssmin','htmlmin','manifest','clean']);
+	grunt.registerTask('dev', [
+		'devcode:dev',
+		'copy:dev'
+	]);
+
+	grunt.registerTask('prod', [
+		'devcode:prod',
+		'copy:prod',
+		'concat',
+		'uglify',
+		'cssmin',
+		'htmlmin',
+		'manifest',
+		'clean'
+	]);
 
 };
