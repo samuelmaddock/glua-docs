@@ -112,6 +112,13 @@ module.exports = function(grunt) {
 			}
 		},
 
+		watch: {
+			scripts: {
+				files: ['src/**/*'],
+				tasks: ['devcode:dev','copy:dev']
+			}
+		},
+
 		clean: ['src/js/concat.js']
 
 	});
@@ -122,12 +129,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-devcode');
 	grunt.loadNpmTasks('grunt-manifest');
 
 	grunt.registerTask('dev', [
 		'devcode:dev',
-		'copy:dev'
+		'copy:dev',
+		'watch'
 	]);
 
 	grunt.registerTask('prod', [
