@@ -181,7 +181,7 @@ nav > ul li a:hover {
 }
 
 #results li.menu:hover {
-	background-color: rgba(46, 204, 113,0.11);
+	background-color: rgba(39, 174, 96,0.11);
 }
 
 #results li a, #results li a:hover, #results li a:active {
@@ -257,19 +257,19 @@ nav > ul li a:hover {
 /* Lua states */
 
 .server {
-	color: rgba(52, 152, 219,1.0) !important;
+	color: rgb(52, 152, 219) !important;
 }
 
 .shared {
-	color: rgba(191, 34, 230,1.0) !important;
+	color: rgb(191, 34, 230) !important;
 }
 
 .client {
-	color: rgba(230, 126, 34,1.0) !important;
+	color: rgb(230, 126, 34) !important;
 }
 
 .menu {
-	color: rgba(46, 204, 113,1.0) !important;
+	color: rgb(39, 174, 96) !important;
 }
 
 /* Wiki CSS */
