@@ -21,6 +21,7 @@
 	<!-- endcode -->
 
 	<!-- devcode:dev -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!-- endcode -->
 
@@ -56,7 +57,9 @@
 						</div>
 
 						<ul id="results" class="scroll">
-							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}"><a href="#{{fn.title}}" ng-click="selectFunction(fn)">{{fn.title}}</a></li>
+							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
+								<a href="#{{fn.title}}" ng-click="selectFunction(fn)">{{fn.title}}</a>
+							</li>
 						</ul>
 
 					</div>
@@ -81,8 +84,21 @@
 					<div class="wrapper scroll" ng-show="query != ''">
 
 						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow>
-							<h1 class="{{fn.scope}}"><a href="{{fn.url}}" target="_blank">{{fn.title}}</a></h1>
+
+							<h1>
+
+								<a href="{{fn.url}}" class="{{fn.scope}}" target="_blank">{{fn.title}}</a>
+
+								<a href="https://github.com/garrynewman/garrysmod/search?q={{fn.title}}" class="extra" target="_blank"><i class="icon-github"></i></a>
+
+							</h1>
+
+							<div class="title-links">
+								
+							</div>
+
 							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
+
 						</article>
 
 					</div>

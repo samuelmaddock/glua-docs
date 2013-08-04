@@ -1,14 +1,15 @@
 CACHE MANIFEST
-# Time: Sun Aug 04 2013 17:23:21 GMT-0400 (Eastern Daylight Time)
+# Time: Sun Aug 04 2013 18:04:13 GMT-0400 (Eastern Daylight Time)
 
 CACHE:
 index.html
-css/style.css
 data/glua.json
+css/style.min.css
 js/gluadocs.min.js
 js/lib/angular.min.js
 js/lib/rainbow-custom.min.js
-fonts/Roboto-Regular-webfont.svg
+font/Roboto-Regular-webfont.svg
+font/fontawesome-webfont.svg
 
 NETWORK:
 *

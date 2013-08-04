@@ -24,7 +24,11 @@ module.exports = function(grunt) {
 		cssmin: {
 			prod: {
 				files: {
-					'app/css/style.min.css' : ['src/css/style.css','src/css/lua-obsidian.css']
+					'app/css/style.min.css' : [
+						'src/css/style.css',
+						'src/css/font-awesome.min.css',
+						'src/css/lua-obsidian.css'
+					]
 				}
 			}
 		},
@@ -47,12 +51,13 @@ module.exports = function(grunt) {
 					basePath: 'app/',
 					cache: [
 						'index.html',
-						'css/style.css',
 						'data/glua.json',
+						'css/style.min.css',
 						'js/gluadocs.min.js',
 						'js/lib/angular.min.js',
 						'js/lib/rainbow-custom.min.js',
-						'fonts/Roboto-Regular-webfont.svg'
+						'font/Roboto-Regular-webfont.svg',
+						'font/fontawesome-webfont.svg'
 					],
 					verbose: false,
 					timestamp: true
@@ -95,7 +100,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: 'src/',
-						src: ['js/lib/*','data/*','fonts/*','favicon.png'],
+						src: ['js/lib/*','data/*','font/*','favicon.png'],
 						dest: 'app/'
 					}
 				]

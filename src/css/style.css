@@ -1,19 +1,24 @@
 /* fonts */
 @font-face {
 	font-family: 'Roboto';
-	src: url('../fonts/Roboto-Regular-webfont.eot');
-	src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('eot'),
-		 url('../fonts/Roboto-Regular-webfont.svg') format('svg'),
-		 url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
-		 url('../fonts/Roboto-Regular-webfont.ttf') format('truetype');
+	src: url('../font/Roboto-Regular-webfont.eot');
+	src: url('../font/Roboto-Regular-webfont.eot?#iefix') format('eot'),
+		 url('../font/Roboto-Regular-webfont.svg') format('svg'),
+		 url('../font/Roboto-Regular-webfont.woff') format('woff'),
+		 url('../font/Roboto-Regular-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
+/* chrome font rendering fix */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	@font-face {
+		font-family: 'FontAwesome';
+		src: url('../font/fontawesome-webfont.svg') format('svg');
+	}
+	@font-face {
 		font-family: 'Roboto';
-		src: url('../fonts/Roboto-Regular-webfont.svg') format('svg');
+		src: url('../font/Roboto-Regular-webfont.svg') format('svg');
 	}
 }
 
@@ -201,6 +206,7 @@ nav > ul li a:hover {
 }
 
 .doc h1 {
+	display: inline-block;
 	font-size: 22pt;
 	font-weight: bold;
 	margin-bottom: 15px;
@@ -209,6 +215,20 @@ nav > ul li a:hover {
 .doc h1 > a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.doc h1 a.extra {
+	padding-left: 8px;
+	color: transparent;
+	transition: color 0.15s;
+}
+
+.doc h1:hover a.extra {
+	color: rgba(0,0,0,0.22);
+}
+
+.doc h1:hover a.extra:hover {
+	color: rgba(0,0,0,1);
 }
 
 /* Scrollbar */
