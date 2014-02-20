@@ -16,7 +16,7 @@ It's suggested not to run this too often as to respect bandwidth usage.
 
     cd scraper
     npm install         # install node.js dependencies (see package.json)
-    node scraper.js     # run the scraper
+    node scrape.js     # run the scraper
     
 ## Building ##
 [Grunt](http://gruntjs.com/) is used to run various processes on the code prior to deployment.
