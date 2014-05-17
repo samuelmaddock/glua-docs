@@ -54,9 +54,9 @@ requirejs([
 				scope = luaStates[i];
 				break;
 			}
-		}
+		}		
 
-		var title = $('head').html().match(/"wgPageName": "(\S+)"/)[1]
+		var title = $('head').html().match(/&quot;wgPageName&quot;: &quot;(\S+)&quot;/)[1]
 			.replace('/','.');
 
 		// Set links to absolute urls
