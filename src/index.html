@@ -58,7 +58,7 @@
 
 						<ul id="results" class="scroll">
 							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
-								<a href="#{{fn.title}}" ng-click="selectFunction(fn)">{{fn.title}}</a>
+								<a href="#{{fn.title}}"">{{fn.title}}</a>
 							</li>
 						</ul>
 
@@ -84,7 +84,7 @@
 
 					<div class="wrapper scroll" ng-show="query != ''">
 
-						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow>
+						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow><div id="{{fn.title}}">
 
 							<h1>
 
@@ -100,7 +100,7 @@
 
 							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
 
-						</article>
+						</article></div>
 
 					</div>
 

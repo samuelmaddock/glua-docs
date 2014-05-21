@@ -37,9 +37,4 @@ angular.module('docsApp.controllers', []).
 			window.location.hash = $scope.queryModel;
 		}
 
-		$scope.selectFunction = function(fn) {
-			$scope.queryModel = fn.title;
-			$scope.updateQuery();
-		}
-
 	}]);
