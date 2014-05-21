@@ -1,5 +1,5 @@
 angular.module('docsApp.controllers', []).
-	controller('DocsCtrl', ['$scope', '$http', function($scope, $http){
+	controller('DocsCtrl', ['$scope', '$http', '$location', '$anchorScroll',  function($scope, $http, $location, $anchorScroll){
 
 		var scopeOrder = {
 			server: 1,
@@ -10,8 +10,8 @@ angular.module('docsApp.controllers', []).
 
 		var queryTimeoutId = -1;
 
-		$scope.queryModel	= window.location.hash.substr(1) || "";
-		$scope.query 		= window.location.hash.substr(1) || "";
+		$scope.queryModel	=  $location.path().substr(1) || "";
+		$scope.query 		=  $location.path().substr(1) || "";
 		$scope.functions = [];
 
 		$http({
@@ -25,12 +25,23 @@ angular.module('docsApp.controllers', []).
 			return (scopeOrder[fn.scope] || 99) + fn.title;
 		}
 
+		$scope.scrollTo = function(loc) {
+
+			$location.hash(loc);
+			$anchorScroll();
+
+		}
+
 		$scope.updateQuery = function() {
 			window.clearTimeout(queryTimeoutId);
 
 			queryTimeoutId = window.setTimeout(function(){
 				$scope.$apply(function() {
 					$scope.query = $scope.queryModel;
+					$location.hash('s_top');
+					$anchorScroll();
+					$location.hash('top');
+					$anchorScroll();
 				});
 			}, 220);
 
