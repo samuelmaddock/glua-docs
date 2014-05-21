@@ -84,7 +84,7 @@
 
 					<div class="wrapper scroll" ng-show="query != ''"><div id="top"/>
 
-						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow><div id="{{fn.title}}">
+						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:3000" doc-rainbow><div id="{{fn.title}}">
 
 							<h1>
 
