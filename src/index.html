@@ -58,8 +58,8 @@
 
 						<ul id="results" class="scroll"><div id="s_top"/>
 							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
-								<a ng-show="$index < 100" ng-click="scrollTo(fn.title)">{{fn.title}}</a>
-								<a ng-show="$index > 99" ng-click="selectFunction(fn)">{{fn.title}}</a>	
+								<a ng-show="$index < 60" ng-click="scrollTo(fn.title)">{{fn.title}}</a>
+								<a ng-show="$index > 59" ng-click="selectFunction(fn)">{{fn.title}}</a>	
 							</li>
 						</ul>
 
@@ -85,7 +85,7 @@
 
 					<div class="wrapper scroll" ng-show="query != ''"><div id="top"/>
 
-						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:100" doc-rainbow><div id="{{fn.title}}">
+						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:60" doc-rainbow><div id="{{fn.title}}">
 
 							<h1>
 
