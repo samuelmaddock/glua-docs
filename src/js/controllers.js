@@ -26,10 +26,8 @@ angular.module('docsApp.controllers', []).
 		}
 
 		$scope.scrollTo = function(loc) {
-
 			$location.hash(loc);
 			$anchorScroll();
-
 		}
 
 		$scope.updateQuery = function() {
@@ -38,14 +36,17 @@ angular.module('docsApp.controllers', []).
 			queryTimeoutId = window.setTimeout(function(){
 				$scope.$apply(function() {
 					$scope.query = $scope.queryModel;
-					$location.hash('s_top');
-					$anchorScroll();
-					$location.hash('top');
-					$anchorScroll();
+					$scope.scrollTo('s_top');
+					$scope.scrollTo('top');
 				});
-			}, 220);
+			},400);
 
 			window.location.hash = $scope.queryModel;
+		}
+
+		$scope.selectFunction = function(fn) {
+			$scope.queryModel = fn.title;
+			$scope.updateQuery();
 		}
 
 	}]);
