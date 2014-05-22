@@ -59,8 +59,8 @@
 						<ul id="results" class="scroll">
 							<div id="s_top"/>
 							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
-								<a ng-show="$index < 60" ng-click="scrollTo(fn.title)">{{fn.title}}</a>
-								<a ng-show="$index > 59" ng-click="selectFunction(fn)">{{fn.title}}</a>	
+								<a ng-show="$index < 60 && queryModel" ng-click="scrollTo(fn.title)">{{fn.title}}</a>
+								<a ng-show="$index > 59 || !queryModel" ng-click="selectFunction(fn)">{{fn.title}}</a>	
 							</li>
 						</ul>
 
@@ -101,9 +101,9 @@
 								
 							</div>
 
-							<div class="wiki" ng-bind-html-unsafe="fn.html">
+							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
 
-						</article></div>
+						</article>
 
 					</div>
 
