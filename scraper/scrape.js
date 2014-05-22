@@ -54,7 +54,7 @@ requirejs([
 				scope = luaStates[i];
 				break;
 			}
-		}		
+		}
 
 		var title = $('head').html().match(/&quot;wgPageName&quot;: &quot;(\S+)&quot;/)[1]
 			.replace('/','.');

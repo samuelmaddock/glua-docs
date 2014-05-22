@@ -56,7 +56,8 @@
 							<input type="search" placeholder="Type a hook or function name" ng-model="queryModel" ng-change="updateQuery()" spellcheck="false" autofocus />
 						</div>
 
-						<ul id="results" class="scroll"><div id="s_top"/>
+						<ul id="results" class="scroll">
+							<div id="s_top"/>
 							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
 								<a ng-show="$index < 60" ng-click="scrollTo(fn.title)">{{fn.title}}</a>
 								<a ng-show="$index > 59" ng-click="selectFunction(fn)">{{fn.title}}</a>	
@@ -83,7 +84,8 @@
 						</div>
 					</div>
 
-					<div class="wrapper scroll" ng-show="query != ''"><div id="top"/>
+					<div class="wrapper scroll" ng-show="query != ''">
+						<div id="top"/>
 
 						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:60" doc-rainbow><div id="{{fn.title}}">
 
@@ -99,7 +101,7 @@
 								
 							</div>
 
-							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
+							<div class="wiki" ng-bind-html-unsafe="fn.html">
 
 						</article></div>
 
@@ -140,3 +142,4 @@
 
 </body>
 </html>
+

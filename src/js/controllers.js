@@ -39,7 +39,7 @@ angular.module('docsApp.controllers', []).
 					$scope.scrollTo('s_top');
 					$scope.scrollTo('top');
 				});
-			},240);
+			}, 220);
 
 			window.location.hash = $scope.queryModel;
 		}
@@ -50,3 +50,4 @@ angular.module('docsApp.controllers', []).
 		}
 
 	}]);
+
