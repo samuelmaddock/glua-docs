@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Time: Thu May 22 2014 16:29:00 GMT-0400 (EDT)
+# Time: Thu May 22 2014 17:34:25 GMT-0400 (EDT)
 
 CACHE:
 index.html
@@ -7,7 +7,6 @@ data/glua.json
 css/style.min.css
 js/gluadocs.min.js
 js/lib/angular.min.js
-js/lib/angular-route.min.js
 js/lib/rainbow-custom.min.js
 font/Roboto-Regular-webfont.svg
 font/fontawesome-webfont.svg

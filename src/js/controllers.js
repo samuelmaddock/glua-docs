@@ -31,6 +31,10 @@ angular.module('docsApp.controllers', []).
 			$anchorScroll();
 		}
 
+		window.setTimeout(function() {
+			$scope.scrollTo(window.location.hash.match(/#[a-zA-Z0-9_.-]*/g)[1].substr(1));
+		}, 200);
+
 		$scope.select = function(fn, pastLimit) {
 			if (pastLimit) {
 				$location.search('filter', fn.title);
@@ -40,7 +44,7 @@ angular.module('docsApp.controllers', []).
 				$scope.filter = $scope.query;
 				$scope.scrollTo(fn.title);
 			}
-			
+
 		}
 
 		$scope.updateQuery = function() {
