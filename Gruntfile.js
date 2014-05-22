@@ -55,6 +55,7 @@ module.exports = function(grunt) {
 						'css/style.min.css',
 						'js/gluadocs.min.js',
 						'js/lib/angular.min.js',
+						'js/lib/angular-route.min.js',
 						'js/lib/rainbow-custom.min.js',
 						'font/Roboto-Regular-webfont.svg',
 						'font/fontawesome-webfont.svg'
