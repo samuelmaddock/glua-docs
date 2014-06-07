@@ -142,7 +142,7 @@ angular.module('docsApp.controllers', [])
 		}
 
 		$scope.select = function(fn, index) {
-			if (index > $scope.resultLimit) {
+			if (!$scope.queryModel.length || (index > $scope.resultLimit)) {
 				$location.search('f', fn.title);
 				$scope.docFilter = fn.title;
 				$anchorScroll();
