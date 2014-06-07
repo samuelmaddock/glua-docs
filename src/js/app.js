@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('docsApp', ['docsApp.controllers','docsApp.directives']);
+angular.module('docsApp', ['docsApp.controllers', 'docsApp.directives']);

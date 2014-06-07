@@ -57,8 +57,10 @@
 						</div>
 
 						<ul id="results" class="scroll">
+							<div id="s_top"/>
 							<li ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}" class="{{fn.scope}}">
-								<a href="#{{fn.title}}" ng-click="selectFunction(fn)">{{fn.title}}</a>
+								<a ng-show="$index < 30 && queryModel" ng-click="select(fn, false)" href="" onclick="return false;" >{{fn.title}}</a>
+								<a ng-show="$index > 29 || !queryModel" ng-click="select(fn, true)" href="" onclick="return false;" >{{fn.title}}</a>	
 							</li>
 						</ul>
 
@@ -68,7 +70,7 @@
 
 				<div class="doc-container">
 
-					<div class="wrapper scroll" ng-show="query == ''">
+					<div class="wrapper scroll" ng-show="query == '' && filter == ''">
 						<div class="doc">
 							<h1>Begin by typing in a function</h1>
 							<p>
@@ -82,9 +84,10 @@
 						</div>
 					</div>
 
-					<div class="wrapper scroll" ng-show="query != ''">
+					<div class="wrapper scroll" ng-show="query != '' || filter != ''">
+						<div id="top"/>
 
-						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:query}|limitTo:30" doc-rainbow>
+						<article class="doc" ng-repeat="fn in functions|orderBy:scopedOrder|filter:{title:filter}|limitTo:30" doc-rainbow><div id="{{fn.title}}">
 
 							<h1>
 
@@ -98,7 +101,7 @@
 								
 							</div>
 
-							<div class="wiki" ng-bind-html-unsafe="fn.html"></div>
+							<div class="wiki" ng-bind-html="unsafeHtml(fn.html)"></div>
 
 						</article>
 
@@ -139,3 +142,4 @@
 
 </body>
 </html>
+
