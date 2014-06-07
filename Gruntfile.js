@@ -358,6 +358,7 @@ module.exports = function (grunt) {
 						'data/glua.json',
 						'scripts/main.js',
 						'scripts/vendor.js',
+						'styles/main.css',
 						'styles/fonts/Roboto-Regular-webfont.svg',
 						'styles/fonts/fontawesome-webfont.svg'
 					],

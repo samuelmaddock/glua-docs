@@ -2,6 +2,7 @@
 // endbower
 
 // partials
+@import "partials/variables";
 @import "partials/fonts";
 @import "partials/reset";
 @import "partials/clearfix";
@@ -20,6 +21,12 @@ body {
 	background-color: rgb(189, 195, 199);
 	font-family: 'Roboto', sans-serif;
 	font-size: 11pt;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *::selection {
