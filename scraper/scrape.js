@@ -28,7 +28,7 @@ requirejs([
 	});
 
 	// file where we'll dump the json
-	var filename = path.dirname(__filename) + '/../src/data/glua.json';
+	var filename = path.dirname(__filename) + '/../app/data/glua.json';
 	console.log('[Dumping to ' + filename + '.]');
 	var file = fs.openSync(filename, 'w');
 

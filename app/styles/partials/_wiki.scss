@@ -1,0 +1,53 @@
+// These styles define those found from the scrapped Garry's Mod wiki data.
+
+.glua-docs .wiki {
+
+	.toc {
+		display: none;
+	}
+
+	h1 {
+		font-size: 16pt;
+	}
+
+	p {
+		padding: 5px;
+		padding-left: 15px;
+		line-height: 16pt;
+	}
+
+	span[id=Example] {
+		font-size: 14pt;
+	}
+
+	span[id*=Arguments_] {
+		display: none;
+	}
+
+	h1 + p, .argument, .return {
+		margin-bottom: 15px;
+	}
+
+	pre, .function_line, code {
+		display: block;
+		color: white;
+		background-color: #454545;
+		padding: 10px;
+		margin: 10px;
+		border-radius: 4px;
+		font-size: 10pt;
+		/*white-space: pre;*/
+		overflow: auto;
+		max-width: 900px;
+	}
+
+	a, a:visited, a:hover, a:active {
+		color: #3498db;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+}

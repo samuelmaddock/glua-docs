@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('fonts/Roboto-Regular-webfont.eot');
+	src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('eot'),
+		 url('fonts/Roboto-Regular-webfont.svg') format('svg'),
+		 url('fonts/Roboto-Regular-webfont.woff') format('woff'),
+		 url('fonts/Roboto-Regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* chrome font rendering fix */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'FontAwesome';
+		src: url('fonts/fontawesome-webfont.svg') format('svg');
+	}
+	@font-face {
+		font-family: 'Roboto';
+		src: url('fonts/Roboto-Regular-webfont.svg') format('svg');
+	}
+}

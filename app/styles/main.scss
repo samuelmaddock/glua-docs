@@ -1,0 +1,279 @@
+// bower:scss
+// endbower
+
+// partials
+@import "partials/fonts";
+@import "partials/reset";
+@import "partials/clearfix";
+@import "partials/wiki";
+
+// third-party
+@import "vendor/font-awesome";
+@import "vendor/lua-obsidian";
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: rgb(189, 195, 199);
+	font-family: 'Roboto', sans-serif;
+	font-size: 11pt;
+}
+
+*::selection {
+	color: white;
+	background-color: rgba(0,0,0,0.22);
+	text-shadow: 0px 0px 6px white;
+}
+
+.glua-docs {
+
+	.wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	input {
+		font: inherit;
+	}
+
+	/* Header bar */
+
+	header {
+		width: 100%;
+		height: 40px;
+		background-color: rgb(127, 140, 141);
+		color: rgba(255,255,255,0.44);
+
+		.title {
+			display: inline-block;
+			height: 100%;
+			width: 200px;
+			padding-left: 7px;
+			font-size: 28pt;
+			line-height: 35pt;
+		}
+
+		nav {
+			float: right;
+			width: auto;
+			height: 100%;
+
+			ul {
+				height: 100%;
+				text-align: center;
+				font-size: 0;
+
+				li {
+					display: inline-block;
+					height: 100%;
+
+					&:hover {
+						background-color: rgba(255,255,255,0.11);
+					}
+
+					a {
+						display: block;
+						height: 100%;
+						font-size: 11pt;
+						line-height: 32pt;
+						padding-left: 10px;
+						padding-right: 10px;
+
+						&:hover {
+							color: rgba(255,255,255,0.88);
+						}
+					}
+
+					a, a:visited {
+						color: rgba(255,255,255,0.44);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	.site {
+		position: absolute;
+		top: 40px; bottom: 0;
+		left: 0; right: 0;
+	}
+
+
+	/* Search */
+
+	.search-container {
+		background-color: rgba(236, 240, 241,1.0);
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 0;
+		width: 280px;
+	}
+
+	.search-header {
+		height: 40px;
+		font-size: 0;
+		overflow: hidden;
+
+		input[type=search] {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			padding-left: 10px;
+			padding-right: 10px;
+			border: none;
+			outline: none;
+			font-size: 10pt;
+			line-height: 12pt;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;         /* Opera/IE 8+ */
+		}
+	}
+
+	.search-results {
+		display: block;
+		position: absolute;
+		top: 40px; bottom: 0;
+		left: 0; right: 0;
+		font-size: 10pt;
+		overflow-x: hidden;
+
+		li {
+			color: #666;
+
+			&:hover {
+				background-color: rgba(0,0,0,0.06);
+			}
+			&.server:hover {
+				background-color: rgba(52, 152, 219,0.11);
+			}
+			&.shared:hover {
+				background-color: rgba(191, 34, 230,0.11);
+			}
+			&.client:hover {
+				background-color: rgba(230, 126, 34,0.11);
+			}
+			&.menu:hover {
+				background-color: rgba(39, 174, 96,0.11);
+			}
+		}
+
+		a, a:hover, a:active {
+			display: block;
+			padding: 4px 11px 4px 11px;
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+
+	/* Documents */
+	.doc-container {
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 280px; right: 0;
+	}
+
+	.doc {
+		padding: 15px;
+		color: #444;
+	}
+
+	h1 {
+		display: inline-block;
+		font-size: 22pt;
+		font-weight: bold;
+		margin-bottom: 15px;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&.extra {
+				padding-left: 8px;
+				color: transparent;
+				transition: color 0.15s;
+			}
+		}
+
+		&:hover a.extra {
+			color: rgba(0,0,0,0.22);
+
+			&:hover {
+				color: rgba(0,0,0,1);
+			}
+		}
+	}
+
+	/* Scrollbar */
+	.scroll {
+		overflow: auto;
+
+		/* &::-webkit-scrollbar {
+			width: 10px;
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			overflow: visible;
+			background-color: rgba(0,0,0,0.11);
+		}
+
+		&::-webkit-scrollbar-button {
+			height: 0;
+			display: block;
+			background-color: transparent;
+		} */
+	}
+
+
+	/* Lua states */
+
+	.server {
+		color: rgb(52, 152, 219) !important;
+	}
+	.shared {
+		color: rgb(191, 34, 230) !important;
+	}
+	.client {
+		color: rgb(211, 84, 0) !important;
+	}
+	.menu {
+		color: rgb(39, 174, 96) !important;
+	}
+
+
+	/* Responsive media queries */
+
+	@media (min-width: 500px) and (max-width: 700px), (min-device-width: 500px) and (max-device-width: 700px) {
+		.search-container {
+			width: 40%;
+		}
+		.doc-container {
+			left: 40%;
+		}
+	}
+
+	@media (max-width: 500px), (max-device-width: 500px) {
+		.search-container {
+			width: auto;
+			top: 0; bottom: auto;
+			left: 0; right: 0;
+			height: 200px;
+		}
+		.doc-container {
+			width: 100%;
+			height: auto;
+			top: 200px; bottom: auto;
+			left: 0; right: 0;
+		}
+	}
+
+}
