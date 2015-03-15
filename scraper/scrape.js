@@ -20,22 +20,23 @@ var REQUEST_LIMIT = 30;
 function fetchWikiEntries () {
 	var tasks = [];
 
-	for (var i = 0; i < ROOT_PAGES.length; i++) {
-		var rootUrl = ROOT_PAGES[i];
-
-		var task = function (callback) {
-			request(rootUrl, function (err, resp, html) {
+	function createTask (url) {
+		return function (callback) {
+			request(url, function (err, resp, html) {
 				if (err) {
-					callback('Couldn\'t fetch entry list at ' + rootUrl);
+					callback('Couldn\'t fetch entry list at ' + url);
 					return;
 				}
 
 				var $ = cheerio.load(html);
-				processEntryList($, rootUrl, callback);
+				processEntryList($, url, callback);
 			});
 		};
+	}
 
-		tasks.push(task);
+	for (var i = 0; i < ROOT_PAGES.length; i++) {
+		var rootUrl = ROOT_PAGES[i];
+		tasks.push(createTask(rootUrl));
 	}
 
 	async.series(tasks, function (err, results) {
