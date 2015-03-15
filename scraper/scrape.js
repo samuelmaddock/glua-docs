@@ -45,7 +45,16 @@ requirejs([
 	spidey.route(domain, '/page/*/*', function ($, url) {
 		console.log('wiki scraping:', url);
 
-		var catlinks = $('#mw-normal-catlinks').html().toLowerCase();
+		var $catlinks = $('#mw-normal-catlinks')
+		var catlinks = $catlinks.html();
+
+		if (!catlinks) {
+			console.error('\tWARNING: Category links are missing on this page and it will thus be ignored.');
+			console.info($catlinks);
+			return;
+		}
+
+		catlinks = catlinks.toLowerCase();
 
 		// Determine Lua state/realm
 		var scope = '';
