@@ -17,6 +17,8 @@ var ROOT_PAGES = [
 var LUA_STATES = ['server', 'shared', 'client', 'menu'];
 var REQUEST_LIMIT = 30;
 
+var WIKI_ENTRIES = [];
+
 function fetchWikiEntries () {
 	var tasks = [];
 
@@ -39,18 +41,12 @@ function fetchWikiEntries () {
 		tasks.push(createTask(rootUrl));
 	}
 
-	async.series(tasks, function (err, results) {
+	async.series(tasks, function (err) {
 		if (err) {
 			console.error('An error occured while scraping the wiki: ', err);
 		}
 
-		var data = results[0];
-
-		for (var i = 1; i < results.length; i++) {
-			data.concat(results[i]);
-		}
-
-		outputScrapeData(data);
+		outputScrapeData();
 	});
 }
 
@@ -65,9 +61,9 @@ function processEntryList ($, url, callback) {
 		entries.push(url);
 	});
 
-	async.mapLimit(entries, REQUEST_LIMIT, fetchWikiEntry, function (err, results) {
+	async.mapLimit(entries, REQUEST_LIMIT, fetchWikiEntry, function (err) {
 		console.log('Finished processing \'' + url + '\'.');
-		callback(null, results);
+		callback(null);
 	});
 }
 
@@ -157,15 +153,17 @@ function processWikiEntry ($, url, callback) {
 		html: $('#bodyContent .mw-content-ltr').html(),
 		scope: scope
 	};
-	callback(null, entryData);
+
+	WIKI_ENTRIES.push(entryData);
+	callback(null);
 }
 
 var OUTPUT_FILE;
 
-function outputScrapeData (data) {
+function outputScrapeData () {
 	console.info('Outputting JSON data..');
 
-	var json = JSON.stringify(data);
+	var json = JSON.stringify(WIKI_ENTRIES);
 	fs.writeSync(OUTPUT_FILE, json);
 
 	console.log('DONE');
