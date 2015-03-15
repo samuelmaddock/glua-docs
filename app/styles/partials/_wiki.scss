@@ -61,6 +61,37 @@
 		}
 	}
 
+	.argument {
+	    counter-increment: arguments;
+	}
+
+	.arg_number:before {
+	    content: counter(arguments);
+	}
+
+	.ret_number:after {
+	    counter-increment: returns;
+	    content: counter(returns);
+	}
+
+	.examples_number:after {
+	    counter-increment: examples;
+	    content: counter(examples);
+	    margin-left: 10px;
+	}
+
+	.arg_number,.ret_number {
+	    font-size: 10px;
+	    font-weight: bolder;
+	    position: relative;
+	    left: -10px;
+	    top: -1px;
+	    color: #fff;
+	    background-color: rgba(0,0,0,0.22);
+	    padding: 1px 4px;
+	    border-radius: 3px;
+	}
+
 	.validatepage {
 		width: 70%;
 		margin: 10px 0;

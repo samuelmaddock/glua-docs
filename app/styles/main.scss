@@ -37,6 +37,11 @@ body {
 
 .glua-docs {
 
+	/* Scrollbar */
+	.scroll {
+		overflow: auto;
+	}
+
 	.wrapper {
 		position: relative;
 		width: 100%;
@@ -151,6 +156,9 @@ body {
 		left: 0; right: 0;
 		font-size: 10pt;
 		overflow-x: hidden;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 
 		li {
 			color: #666;
@@ -194,7 +202,6 @@ body {
 	}
 
 	h1 {
-		display: inline-block;
 		font-size: 22pt;
 		font-weight: bold;
 		margin-bottom: 15px;
@@ -218,28 +225,6 @@ body {
 			}
 		}
 	}
-
-	/* Scrollbar */
-	.scroll {
-		overflow: auto;
-
-		/* &::-webkit-scrollbar {
-			width: 10px;
-			background-color: transparent;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			overflow: visible;
-			background-color: rgba(0,0,0,0.11);
-		}
-
-		&::-webkit-scrollbar-button {
-			height: 0;
-			display: block;
-			background-color: transparent;
-		} */
-	}
-
 
 	/* Lua states */
 
