@@ -108,14 +108,24 @@ function processWikiEntry ($, url, callback) {
 
 	// Set links to absolute urls
 	function setAbsoluteUrl(idx, elem) {
-		elem.attribs.href = "http://" + DOMAIN_NAME + elem.attribs.href;
-		elem.attribs.target = "_blank";
+		var domain = 'http://' + DOMAIN_NAME;
+
+		switch (elem.tagName.toLowerCase()) {
+			case 'a':
+				elem.attribs.href = domain + elem.attribs.href;
+				elem.attribs.target = '_blank';
+				break;
+			case 'img':
+				elem.attribs.src = domain + elem.attribs.src;
+				break;
+		}
 	}
 
 	var $content = $('#bodyContent .mw-content-ltr');
 
 	$content.find("a[href^='/page/']").each(setAbsoluteUrl);
 	$content.find("a[href^='/index.php']").each(setAbsoluteUrl);
+	$content.find("img").each(setAbsoluteUrl);
 
 	// Wiki code processing
 	$content.find("pre").each(function(i, e) {
