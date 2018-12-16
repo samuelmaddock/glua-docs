@@ -6,6 +6,11 @@
     "type": "git",
     "url": "http://github.com/samuelmaddock/glua-docs.git"
   },
+  "scripts": {
+	"build": "grunt",
+	"deploy": "grunt deploy",
+	"release": "npm run build && npm run deploy"
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.3",
