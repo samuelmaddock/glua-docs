@@ -184,6 +184,25 @@ angular.module('docsApp.controllers', [])
 			};
 		}());
 
+		window.onpopstate = function( e ) {
+			resultsResetScroll();
+			$scope.$apply(function() {
+				var filter = $location.search().f;
+				if ( filter ) {
+					$scope.docFilter = filter; // Update content
+					$scope.query = ''; // Update the sidebar
+					$scope.queryModel = ''; // Update the search text
+				}
+
+				var query = $location.search().q;
+				if ( query ) {
+					$scope.docFilter = query;
+					$scope.query = query;
+					$scope.queryModel = query;
+				}
+			});
+		}
+
 		$scope.unsafeHtml = function(html) {
 			return $sce.trustAsHtml(html);
 		};
