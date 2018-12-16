@@ -21,10 +21,6 @@ module.exports = function (grunt) {
 
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
-			bower: {
-				files: ['bower.json'],
-				tasks: ['bowerInstall']
-			},
 			js: {
 				files: ['<%= config.app %>/scripts/{,*/}*.js'],
 				options: {
@@ -68,7 +64,6 @@ module.exports = function (grunt) {
 					middleware: function(connect) {
 						return [
 							connect.static('.tmp'),
-							connect().use('/bower_components', connect.static('./bower_components')),
 							connect.static(config.app)
 						];
 					}
@@ -101,9 +96,6 @@ module.exports = function (grunt) {
 		sass: {
 			options: {
 				implementation: require('node-sass'),
-				loadPath: [
-					'bower_components'
-				]
 			},
 			dist: {
 				files: [{
@@ -137,17 +129,6 @@ module.exports = function (grunt) {
 					src: '{,*/}*.css',
 					dest: '.tmp/styles/'
 				}]
-			}
-		},
-
-		// Automatically inject Bower components into the HTML file
-		bowerInstall: {
-			app: {
-				src: ['<%= config.app %>/index.html'],
-				exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']
-			},
-			sass: {
-				src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
 			}
 		},
 
