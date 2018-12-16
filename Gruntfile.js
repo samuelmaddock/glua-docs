@@ -27,7 +27,6 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: ['<%= config.app %>/scripts/{,*/}*.js'],
-				tasks: ['jshint'],
 				options: {
 					livereload: true
 				}
@@ -98,22 +97,10 @@ module.exports = function (grunt) {
 			server: '.tmp'
 		},
 
-		// Make sure code styles are up to par and there are no obvious mistakes
-		jshint: {
-			options: {
-				jshintrc: '.jshintrc',
-				reporter: require('jshint-stylish')
-			},
-			all: [
-				'Gruntfile.js',
-				'<%= config.app %>/scripts/{,*/}*.js',
-				'!<%= config.app %>/scripts/vendor/*'
-			]
-		},
-
 		// Compiles Sass to CSS and generates necessary files if requested
 		sass: {
 			options: {
+				implementation: require('node-sass'),
 				loadPath: [
 					'bower_components'
 				]
@@ -386,7 +373,6 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('default', [
-		'newer:jshint',
 		'build'
 	]);
 };
