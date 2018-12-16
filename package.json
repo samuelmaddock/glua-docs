@@ -8,8 +8,7 @@
   },
   "scripts": {
 	"build": "grunt",
-	"deploy": "grunt deploy",
-	"release": "npm run build && npm run deploy"
+	"deploy": "grunt deploy"
   },
   "dependencies": {},
   "devDependencies": {
