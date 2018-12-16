@@ -18,7 +18,14 @@ It's suggested not to run this too often as to respect bandwidth usage.
     npm install         # install node.js dependencies (see package.json)
     node scrape.js     # run the scraper
     
-## Building ##
-[Grunt](http://gruntjs.com/) is used to run various processes on the code prior to deployment.
-Reading through the [Getting Started guide](http://gruntjs.com/getting-started) should help in setting up Grunt.
-Simply run `grunt` from the command line to build the necessary project files into `/app`
+## Build ##
+```bash
+yarn
+yarn build
+```
+
+## Deploy ##
+The app is deployed to the `gh-pages` branch.
+```bash
+yarn deploy
+```
