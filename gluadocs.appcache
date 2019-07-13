@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# Time: Sat Jul 13 2019 00:19:40 GMT+0000 (Coordinated Universal Time)
+
+CACHE:
+index.html
+data/glua.json
+scripts/main.js
+scripts/vendor.js
+styles/main.css
+styles/fonts/Roboto-Regular-webfont.svg
+styles/fonts/fontawesome-webfont.svg
+
+NETWORK:
+*
