@@ -32,7 +32,7 @@
     "grunt-svgmin": "^5.0.0",
     "grunt-usemin": "^3.1.1",
     "load-grunt-tasks": "^4.0.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   },
   "engines": {
     "node": ">=8.11.4"
